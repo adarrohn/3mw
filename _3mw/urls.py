@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from _3mw_app.views import SitesList, SitesDetail, SummaryList, SummaryListAverage
+from _3mw_app.views import SitesList, SitesDetail, SummaryListSum, SummaryListAverage
 
 urlpatterns = patterns('',
                        # List View for Sites Page
@@ -18,8 +18,8 @@ urlpatterns = patterns('',
                        # List View for Summary Page
                        # matches /summary, /summary/
                        url(r'^summary/?$',
-                           SummaryList.as_view(),
-                           name='summary'),
+                           SummaryListSum.as_view(),
+                           name='summary_sum'),
 
                        # List View for Summary Average Page
                        # matches /summary-average, /summary-average/

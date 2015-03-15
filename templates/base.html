@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>3megawatt App</title>
+    <title>
+        {% block title %}
+            3megawatt App
+        {% endblock %}
+    </title>
     {% load bootstrap3 %}
 </head>
 <body>
-
+    {% block body %}{% endblock %}
 </body>
     {% bootstrap_css %}
     {% bootstrap_javascript %}
