@@ -13,6 +13,7 @@ class Site(models.Model):
     class Meta:
         verbose_name = 'Site'
         verbose_name_plural = 'Sites'
+        ordering = ['-Name']
 
     def __str__(self):
         return 'Site {}'.format(self.name)
