@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
 {% block body %}
-
+    <div class='container'>
+        <h1>Sites</h1>
+        <ul>
+            {% for site in sites %}
+                <li>{{ site.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

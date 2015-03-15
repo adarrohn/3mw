@@ -16,6 +16,9 @@ class SitesList(SiteMixin, ListView):
     """
     template_name = 'sites_list.html'
 
+    def get_queryset(self):
+        return Site.objects.order_by('name').all()
+
 
 class SitesDetail(SiteMixin, DetailView):
     """

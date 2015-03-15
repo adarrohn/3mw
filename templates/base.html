@@ -9,9 +9,9 @@
     {% load bootstrap3 %}
     {% load tags %}
 
-    {% url 'root'  as root%}
-    {% url 'sites' as sites %}
-    {% url 'summary_sum' as summary %}
+    {% url 'root'  as root_url%}
+    {% url 'sites' as sites_url %}
+    {% url 'summary_sum' as summary_url %}
 
 </head>
 <body>
@@ -28,12 +28,12 @@
             </div>
             <div id='navbar' class='navbar-collapse collapse'>
               <ul class='nav navbar-nav'>
-                {% if request.path == root %}
-                    <li class='{% active request root %}'><a href='{{ sites }}/'>Sites</a></li>
+                {% if request.path == root_url %}
+                    <li class='{% active request root_url %}'><a href='{{ sites_url }}/'>Sites</a></li>
                 {% else %}
-                <li class='{% active request sites %}'><a href='{{ sites }}/'>Sites</a></li>
+                <li class='{% active request sites_url %}'><a href='{{ sites_url }}/'>Sites</a></li>
                 {% endif %}
-                <li class='{% active request summary %}'><a href='{{ summary }}/'>Summary</a></li>
+                <li class='{% active request summary_url %}'><a href='{{ summary_url }}/'>Summary</a></li>
               </ul>
             </div>
         </div>
