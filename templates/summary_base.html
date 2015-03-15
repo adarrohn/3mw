@@ -4,7 +4,7 @@
 {% block body %}
     <div class='container'>
         <h1>
-            Summary - Sum
+            Summary - {% block name %}{% endblock %}
         </h1>
         <a href="{% url 'summary_sum' %}">
             <button class="btn btn-primary {% active request sum_url %}">
@@ -25,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-            {% block aggragate %}
+            {% block aggregate %}
             {% endblock %}
             </tbody>
         </table>

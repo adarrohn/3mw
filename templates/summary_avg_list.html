@@ -1,5 +1,6 @@
 {% extends "summary_base.html" %}
-{% block aggragate %}
+{% block name %}Average{% endblock %}
+{% block aggregate %}
     {% for site in sites %}
         <tr>
             <td>{{ site.name }}</td>
