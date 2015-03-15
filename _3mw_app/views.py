@@ -1,29 +1,29 @@
 from django.views.generic import ListView, DetailView
-
+from .models import Site
 
 class SitesList(ListView):
     """
 
     """
-    pass
+    model = Site
 
 
 class SitesDetail(DetailView):
     """
 
     """
-    pass
+    model = Site
 
 
 class SummaryList(ListView):
     """
 
     """
-    pass
+    model = Site
 
 
 class SummaryListAverage(ListView):
     """
 
     """
-    pass
+    model = Site
