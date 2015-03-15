@@ -5,3 +5,6 @@ __pycache__/
 *.pot
 .idea/
 
+
+_3mw/settings_secret.py
+db.sqlite3
