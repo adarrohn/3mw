@@ -11,8 +11,8 @@
 
     {% url 'root'  as root_url%}
     {% url 'sites' as sites_url %}
-    {% url 'summary_sum' as summary_url %}
-
+    {% url 'summary_sum' as sum_url %}
+    {% url 'summary_avg' as avg_url %}
 </head>
 <body>
     {% block nav %}
@@ -33,7 +33,7 @@
                 {% else %}
                 <li class='{% active request sites_url %}'><a href='{{ sites_url }}/'>Sites</a></li>
                 {% endif %}
-                <li class='{% active request summary_url %}'><a href='{{ summary_url }}/'>Summary</a></li>
+                <li class='{% active request sum_url %}'><a href='{{ sum_url }}/'>Summary</a></li>
               </ul>
             </div>
         </div>

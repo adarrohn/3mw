@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load tags %}
+
+{% block body %}
+    <div class='container'>
+        <h1>
+            Summary - Sum
+        </h1>
+        <a href="{% url 'summary_sum' %}">
+            <button class="btn btn-primary {% active request sum_url %}">
+                Sum
+            </button>
+        </a>
+        <a href="{% url 'summary_avg' %}">
+            <button class="btn btn-primary {% active request  avg_url %}">
+                Average
+            </button>
+        </a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Site</td>
+                    <td>Value A</td>
+                    <td>Value B</td>
+                </tr>
+            </thead>
+            <tbody>
+            {% block aggragate %}
+            {% endblock %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
