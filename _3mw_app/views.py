@@ -1,7 +1,29 @@
-from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 
 
-def b_test(request):
-    return render(request,
-                  'b_test.html',
-                  {})
+class SitesList(ListView):
+    """
+
+    """
+    pass
+
+
+class SitesDetail(DetailView):
+    """
+
+    """
+    pass
+
+
+class SummaryList(ListView):
+    """
+
+    """
+    pass
+
+
+class SummaryListAverage(ListView):
+    """
+
+    """
+    pass
