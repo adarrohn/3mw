@@ -75,3 +75,7 @@ STATICFILES_DIRS = (
 )
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+BOOTSTRAP3 = {
+    'include_jquery': True,
+}
