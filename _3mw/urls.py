@@ -4,8 +4,14 @@ from _3mw_app.views import SitesList, SitesDetail, SummaryListSum, SummaryListAv
 
 urlpatterns = patterns('',
                        # List View for Sites Page
-                       # matches /, /sites/, /sites
-                       url(r'(^sites/?$)|(^/?$)',
+                       # matches root
+                       url(r'^/?$',
+                           SitesList.as_view(),
+                           name='root'),
+
+                       # List View for Sites Page
+                       # matches /sites/, /sites
+                       url(r'^sites/?$',
                            SitesList.as_view(),
                            name='sites'),
 
