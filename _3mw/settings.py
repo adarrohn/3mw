@@ -8,8 +8,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
-from .settings_secret import *
 import os
+import dj_database_url
+
+from .settings_secret import *
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = True
@@ -43,10 +46,7 @@ ROOT_URLCONF = '_3mw.urls'
 WSGI_APPLICATION = '_3mw.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.config()
 }
 
 LANGUAGE_CODE = 'en-us'
