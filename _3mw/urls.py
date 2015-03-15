@@ -27,5 +27,6 @@ urlpatterns = patterns('',
                            SummaryListAverage.as_view(),
                            name='summary_average'),
 
-                       url(r'^admin/?$',
+                       # Admin
+                       url(r'^admin/',
                            include(admin.site.urls)))
