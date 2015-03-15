@@ -7,4 +7,3 @@ __pycache__/
 
 
 _3mw/settings_secret.py
-db.sqlite3

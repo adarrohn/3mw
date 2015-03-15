@@ -19,7 +19,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -45,6 +45,8 @@ ROOT_URLCONF = '_3mw.urls'
 
 WSGI_APPLICATION = '_3mw.wsgi.application'
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 DATABASES = {
     'default': dj_database_url.config()
 }
@@ -59,4 +61,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATIC_ROOT = 'staticfiles'
+
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
