@@ -7,13 +7,17 @@ class Site(models.Model):
     """
     name = models.CharField(max_length=50)
     date = models.DateField()
-    val_a = models.DecimalField()
-    val_b = models.DecimalField()
+    val_a = models.DecimalField(max_digits=10,
+                                decimal_places=2,
+                                verbose_name='Value A')
+    val_b = models.DecimalField(max_digits=10,
+                                decimal_places=2,
+                                verbose_name='Value B')
 
     class Meta:
         verbose_name = 'Site'
         verbose_name_plural = 'Sites'
-        ordering = ['-Name']
+        ordering = ['-name']
 
     def __str__(self):
         return 'Site {}'.format(self.name)
