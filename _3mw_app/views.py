@@ -1,5 +1,5 @@
 from django.views.generic import ListView, DetailView
-from .models import Site
+from .models import Site, Entry
 
 
 class SiteMixin(object):
@@ -16,16 +16,16 @@ class SitesList(SiteMixin, ListView):
     """
     template_name = 'sites_list.html'
 
-    def get_queryset(self):
-        return Site.objects.order_by('name').all()
 
-
-class SitesDetail(SiteMixin, DetailView):
+class SitesDetail(ListView):
     """
-    Shows a Single Site in a Detail View
+    Shows a Single Site in a List View Containing Foreign Entries
     """
     template_name = 'sites_detail.html'
-    context_object_name = 'site'
+    context_object_name = 'entries'
+
+    def get_queryset(self):
+        return Entry.objects.filter(site=self.kwargs['id'])
 
 
 class SummaryListSum(SiteMixin, ListView):

@@ -6,7 +6,7 @@
         <ul class="list-group">
             {% for site in sites %}
                 <li class="list-group-item">
-                    <a href='{% url 'sites_detail' site.id %}'> {{ site.name }}</a>
+                    <a href='{% url 'sites_detail' site.id %}/'> {{ site.name }}</a>
                 </li>
             {% endfor %}
         </ul>

@@ -17,7 +17,7 @@ urlpatterns = patterns('',
 
                        # Detail View for Sites
                        # matches /sites/#, /sites/#/
-                       url(r'^sites/(?P<pk>\d+)/?$',
+                       url(r'^sites/(?P<id>\d+)/?$',
                            SitesDetail.as_view(),
                            name='sites_detail'),
 

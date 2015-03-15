@@ -10,7 +10,7 @@ class Site(models.Model):
     class Meta:
         verbose_name = 'Site'
         verbose_name_plural = 'Sites'
-        ordering = ['-name']
+        ordering = ['name']
 
     def __str__(self):
         return 'Site {}'.format(self.name)
@@ -29,10 +29,11 @@ class Entry(models.Model):
                                 decimal_places=2,
                                 verbose_name='Value B')
 
+
     class Meta:
         verbose_name = 'Entry'
         verbose_name_plural = 'Entries'
-        ordering = ['-date']
+        ordering = ['date']
 
     def __str__(self):
         return 'Entry {}'.format(self.pk)
