@@ -6,12 +6,12 @@
         <h1>
             Summary - {% block name %}{% endblock %}
         </h1>
-        <a href="{{ sum_url }}">
+        <a href="{{ sum_url }}/">
             <button class="btn btn-primary {% active request sum_url %}">
                 Sum
             </button>
         </a>
-        <a href="{{ avg_url }}">
+        <a href="{{ avg_url }}/">
             <button class="btn btn-primary {% active request avg_url %}">
                 Average
             </button>
