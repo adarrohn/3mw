@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
 import os
+import sys
 import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -51,6 +52,11 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 DATABASES = {
     'default': dj_database_url.config()
 }
+
+import sys
+if 'test' in sys.argv or 'test_coverage' in sys.argv:
+        DATABASES['default'] = {'ENGINE': 'django.db.backends.sqlite3',
+                                'NAME': os.path.join(BASE_DIR, 'db.sqlite3')}
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),

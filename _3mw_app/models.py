@@ -30,6 +30,8 @@ class SiteAverageManager(models.Manager):
     def with_averages_python(self):
         """
         Computer Averages via Simple Query and Python
+        Returns a List of Sorted Tuples (Site Name, SUM(A), SUM(B))
+        by Site Name Ascending
         """
         cursor = connection.cursor()
         cursor.execute("""
