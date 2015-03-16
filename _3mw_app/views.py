@@ -44,5 +44,4 @@ class SummaryListAverage(ListView):
     context_object_name = 'sites'
 
     def get_queryset(self):
-        return Site.objects.all().annotate(avg_val_a=Avg('entry__val_a'),
-                                           avg_val_b=Avg('entry__val_b'))
+        return Site.average_objects.with_averages_join()
