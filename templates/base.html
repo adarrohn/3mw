@@ -29,11 +29,11 @@
             <div id='navbar' class='navbar-collapse collapse'>
               <ul class='nav navbar-nav'>
                 {% if request.path == root_url %}
-                    <li class='{% active request root_url %}'><a href='{{ sites_url }}/'>Sites</a></li>
+                    <li class='{% active_basic request root_url %}'><a href='{{ sites_url }}/'>Sites</a></li>
                 {% else %}
-                <li class='{% active request sites_url %}'><a href='{{ sites_url }}/'>Sites</a></li>
+                <li class='{% active_basic request sites_url %}'><a href='{{ sites_url }}/'>Sites</a></li>
                 {% endif %}
-                <li class='{% active request sum_url %}'><a href='{{ sum_url }}/'>Summary</a></li>
+                <li class='{% active_basic request sum_url %}'><a href='{{ sum_url }}/'>Summary</a></li>
               </ul>
             </div>
         </div>
